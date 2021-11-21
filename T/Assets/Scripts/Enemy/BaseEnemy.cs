@@ -35,6 +35,9 @@ public abstract class BaseEnemy : MonoBehaviour
     [Header("Attack")]
 
     [SerializeField]
+    float moveSpeedWhenAttack;
+
+    [SerializeField]
     protected float timeBitweenAttacks;
     public bool alreadyAttacked;
     [SerializeField]
@@ -123,7 +126,7 @@ public abstract class BaseEnemy : MonoBehaviour
 
     protected virtual void BaseAttack()
     {
-        navMeshAgent.SetDestination(transform.position);
+        navMeshAgent.speed = moveSpeedWhenAttack;
         transform.LookAt(player);
 
         if (!alreadyAttacked)

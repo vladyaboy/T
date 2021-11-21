@@ -141,6 +141,7 @@ MonoBehaviour:
   sightRange: 13
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 5
+  moveSpeedWhenAttack: 3
   timeBitweenAttacks: 1
   alreadyAttacked: 0
   attackRange: 7
