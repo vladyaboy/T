@@ -7,8 +7,19 @@ public class GameManager : MonoBehaviour
 {
     public bool gameOver = false;
 
+    int playerScore = 0;
+
     [SerializeField]
     TextMeshProUGUI gameOverText;
+
+    [SerializeField]
+    TextMeshProUGUI scoreText;
+
+    [SerializeField]
+    TextMeshProUGUI waveText;
+
+    string scoreTextTemplate = "The score:";
+    string waveTextTemplate = "Wave:";
 
     [SerializeField]
     LayerMask isLevel;
@@ -45,6 +56,9 @@ public class GameManager : MonoBehaviour
         {
             DestroyAllEnemies();
         }
+
+        scoreText.text = ($"{scoreTextTemplate} {playerScore}");
+        waveText.text = ($"{waveTextTemplate} {waveNumber}");
     }
 
     private void DestroyAllEnemies()
@@ -60,7 +74,11 @@ public class GameManager : MonoBehaviour
     {
         for (int i = 0; i < enemyCount; i++)
         {
-            if (!spawnPointSet) GenerateSpawnPosition();
+            while(!spawnPointSet)
+            { 
+                GenerateSpawnPosition(); 
+            }
+
             if (spawnPointSet)
             {
                 Instantiate(enemyPrefab, spawnPoint, enemyPrefab.transform.rotation);
@@ -79,8 +97,6 @@ public class GameManager : MonoBehaviour
         if(!Physics.CheckSphere(spawnPoint, 1f, isLevel))
         {
             spawnPointSet = true;
-            Debug.Log(spawnPointSet.ToString());
-            Debug.Log(enemyCounter);
         }
     }
 
@@ -88,5 +104,10 @@ public class GameManager : MonoBehaviour
     {
         gameOver = true;
         gameOverText.gameObject.SetActive(true);
+    }
+
+    public void AddScore(int scoreToAdd)
+    {
+        playerScore += scoreToAdd;
     }
 }

@@ -6,6 +6,8 @@ public class Enemy1 : BaseEnemy
 {
     [SerializeField]
     GunController gunController;
+    
+    public int scoreForEnemy = 5;
 
     private void Awake()
     {
@@ -28,5 +30,6 @@ public class Enemy1 : BaseEnemy
     {
         base.Dying();
         // add some score to the player
+        FindObjectOfType<GameManager>().AddScore(scoreForEnemy);
     }
 }
