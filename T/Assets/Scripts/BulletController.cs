@@ -20,7 +20,7 @@ public class BulletController : MonoBehaviour
             collision.gameObject.GetComponent<Enemy1>().TakeDamage(damage);
         }
 
-        if(!(this.CompareTag("Player Bullet") && collision.gameObject.CompareTag("Player")))
+        if((!this.CompareTag("Player Bullet") && collision.gameObject.CompareTag("Player")))
         {
             GameObject.Find("Player").GetComponent<PlayerController>().TakeDamage(damage);
         }
