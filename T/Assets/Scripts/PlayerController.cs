@@ -45,6 +45,14 @@ public class PlayerController : MonoBehaviour
 
         moveDirection = transform.forward * verticalInput + transform.right * horizontalInput;
 
+        Ray cameraRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Plane groundPlane = new Plane(Vector3.up, Vector3.zero);
+
+        if (groundPlane.Raycast(cameraRay, out float rayLength))
+        {
+            Vector3 pointToLook = cameraRay.GetPoint(rayLength);
+            transform.LookAt(new Vector3(pointToLook.x, transform.position.y, pointToLook.z));
+        }
     }
 
     private void MovePlayer()
