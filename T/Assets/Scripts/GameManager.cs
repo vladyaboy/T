@@ -1,7 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -17,6 +17,9 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     TextMeshProUGUI waveText;
+
+    [SerializeField]
+    Button restartButton;
 
     string scoreTextTemplate = "The score:";
     string waveTextTemplate = "Wave:";
@@ -42,23 +45,41 @@ public class GameManager : MonoBehaviour
         SpawnNewWave(waveNumber);
     }
 
-
     // Update is called once per frame
     void Update()
     {
+        HandleWaveSpawning();
+
+        //не уверен что это стоит делать в апдейте
+        HandleGameOver();
+
+        HandleUiText();
+    }
+
+    private void HandleWaveSpawning()
+    {
         enemyCounter = FindObjectsOfType<BaseEnemy>().Length;
-        if(enemyCounter == 0 && !gameOver)
+        if (enemyCounter == 0 && !gameOver)
         {
             SpawnNewWave(++waveNumber);
         }
+    }
 
+    private void HandleUiText()
+    {
+        scoreText.text = ($"{scoreTextTemplate} {playerScore}");
+        waveText.text = ($"{waveTextTemplate} {waveNumber}");
+    }
+
+    private void HandleGameOver()
+    {
         if (gameOver)
         {
             DestroyAllEnemies();
+            gameOverText.gameObject.SetActive(true);
+            restartButton.gameObject.SetActive(true);
         }
-
-        scoreText.text = ($"{scoreTextTemplate} {playerScore}");
-        waveText.text = ($"{waveTextTemplate} {waveNumber}");
+        
     }
 
     private void DestroyAllEnemies()
@@ -103,11 +124,15 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         gameOver = true;
-        gameOverText.gameObject.SetActive(true);
     }
 
     public void AddScore(int scoreToAdd)
     {
         playerScore += scoreToAdd;
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
