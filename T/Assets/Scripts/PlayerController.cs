@@ -8,6 +8,15 @@ public class PlayerController : MonoBehaviour
     GunController gunController;
 
     [SerializeField]
+    GameManager gameManager;
+
+    [SerializeField]
+    int health;
+
+    [SerializeField]
+    int maxHealth;
+
+    [SerializeField]
     float playerMoveSpeed = 5f;
 
     float verticalInput;
@@ -19,11 +28,12 @@ public class PlayerController : MonoBehaviour
     Vector3 moveDirection;
 
     // Start is called before the first frame update
-    void Start()
+
+    private void Awake()
     {
         InitializeComponents();
+        health = maxHealth;
     }
-
 
     // Update is called once per frame
     void Update()
@@ -89,5 +99,14 @@ public class PlayerController : MonoBehaviour
     {
         playerRb.AddForce(playerRb.transform.InverseTransformDirection(moveDirection.normalized) * playerMoveSpeed * movementMultiplier, ForceMode.Force);
         
+    }
+
+    public void TakeDamage(int damage)
+    {
+        health -= damage;
+        if (health <= 0)
+        {
+            gameManager.GameOver();
+        }
     }
 }

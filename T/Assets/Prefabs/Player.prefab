@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 85721364909409816}
   - component: {fileID: 6485151746167566462}
   - component: {fileID: 5025624449764504294}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Gun Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,7 +107,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7749205167170369409}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Bullet Spawn Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,7 +122,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1343610960382210217}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.074}
+  m_LocalPosition: {x: 0, y: 0, z: 1.224}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -143,9 +143,9 @@ GameObject:
   - component: {fileID: 2759245635726565126}
   - component: {fileID: 2759245635726565122}
   - component: {fileID: 344740814}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -269,7 +269,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3176883670768255322}
   - component: {fileID: 682965120}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}

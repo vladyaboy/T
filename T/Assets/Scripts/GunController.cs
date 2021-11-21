@@ -13,6 +13,9 @@ public class GunController : MonoBehaviour
     float bulletSpeed;
 
     [SerializeField]
+    int bulletDamage;
+
+    [SerializeField]
     float timeBitweenShots;
 
     public float nextfire;
@@ -47,5 +50,6 @@ public class GunController : MonoBehaviour
     {
         BulletController newBullet = Instantiate(bulletController, firePoint.position, transform.rotation);
         newBullet.speedf = bulletSpeed;
+        newBullet.damage = bulletDamage;
     }
 }

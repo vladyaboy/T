@@ -79,8 +79,9 @@ public abstract class BaseEnemy : MonoBehaviour
     }
 
     //Override this in the child class of the enemy if u need
-    protected virtual void TakeDamage(int damage)
+    public virtual void TakeDamage(int damage)
     {
+        Debug.Log("Enemy Damaged");
         health -= damage;
         if (health <= 0) Dying();
     }
@@ -120,13 +121,6 @@ public abstract class BaseEnemy : MonoBehaviour
     {
         navMeshAgent.speed = chaseSpeed;
         navMeshAgent.SetDestination(player.position);
-        Chase();
-    }
-    
-    //Override this in the child class of the enemy if u need
-    protected virtual void Chase()
-    {
-
     }
 
     protected virtual void BaseAttack()
@@ -155,6 +149,5 @@ public abstract class BaseEnemy : MonoBehaviour
     protected virtual void Dying()
     {
         Destroy(gameObject);
-        //Add score points to the player
     }
 }
