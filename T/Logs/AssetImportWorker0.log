@@ -3869,3 +3869,27 @@ AssetImportParameters requested are different than current active one (requested
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 4615.390376 seconds.
+  path: Assets/Materials/Gun Material.mat
+  artifactKey: Guid(40331bbe4899a76408d8a7f97bf7d9c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Gun Material.mat using Guid(40331bbe4899a76408d8a7f97bf7d9c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '96631dc53ca0181acf8fcbc1934ae1dc') in 0.122799 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 191.142726 seconds.
+  path: Assets/Materials/Bullet Material.mat
+  artifactKey: Guid(be3ce4b5ad26e2646a7a6c0885a3f770) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Bullet Material.mat using Guid(be3ce4b5ad26e2646a7a6c0885a3f770) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b35017b626293a1c0203bcb2d73bbe6b') in 0.021509 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 12.049092 seconds.
+  path: Assets/Prefabs/Projectile Bullet.prefab
+  artifactKey: Guid(693d10b812a157b4b846ed919e0d2325) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Projectile Bullet.prefab using Guid(693d10b812a157b4b846ed919e0d2325) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5a6c4efaf1028e156c0f5be94e62de06') in 0.031428 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 11.463178 seconds.
+  path: Assets/Prefabs/Projectile Bullet.prefab
+  artifactKey: Guid(693d10b812a157b4b846ed919e0d2325) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Projectile Bullet.prefab using Guid(693d10b812a157b4b846ed919e0d2325) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '94fcf6b59bf59f08c2dfbf2753d44cac') in 0.017904 seconds 
