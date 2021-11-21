@@ -4,11 +4,16 @@ public class BulletController : MonoBehaviour
 {
     public float speedf;
     public int damage;
+    float xBoundaries = 30f;
+    float zBoundaries = 15f;
 
     // Update is called once per frame
     void Update()
     {
         transform.Translate(Vector3.forward * speedf * Time.deltaTime);
+
+        if (transform.position.x > xBoundaries || transform.position.x < -xBoundaries) Destroy(gameObject);
+        if (transform.position.z > zBoundaries || transform.position.z < -zBoundaries) Destroy(gameObject);
     }
 
     private void OnCollisionEnter(Collision collision)

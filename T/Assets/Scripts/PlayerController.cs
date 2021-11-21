@@ -33,6 +33,7 @@ public class PlayerController : MonoBehaviour
     {
         InitializeComponents();
         health = maxHealth;
+        gunController.isFiring = false;
     }
 
     // Update is called once per frame
