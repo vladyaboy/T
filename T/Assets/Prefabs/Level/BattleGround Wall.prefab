@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8208679824630527100}
   - component: {fileID: 184389248217301954}
   - component: {fileID: 2558441415277318838}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BattleGround Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
