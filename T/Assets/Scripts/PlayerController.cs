@@ -5,6 +5,9 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
+    GunController gunController;
+
+    [SerializeField]
     float playerMoveSpeed = 5f;
 
     float verticalInput;
@@ -26,6 +29,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         HandleInput();
+        HadleRotation();
     }
 
     private void FixedUpdate()
@@ -42,9 +46,23 @@ public class PlayerController : MonoBehaviour
     {
         verticalInput = Input.GetAxisRaw("Vertical");
         horizontalInput = Input.GetAxisRaw("Horizontal");
-
+        
         moveDirection = transform.forward * verticalInput + transform.right * horizontalInput;
 
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            Shoot(true);
+        }
+
+        if (Input.GetKeyUp(KeyCode.Mouse0))
+        {
+            Shoot(false);
+        }
+
+    }
+
+    private void HadleRotation()
+    {
         Ray cameraRay = Camera.main.ScreenPointToRay(Input.mousePosition);
         Plane groundPlane = new Plane(Vector3.up, Vector3.zero);
 
@@ -53,6 +71,18 @@ public class PlayerController : MonoBehaviour
             Vector3 pointToLook = cameraRay.GetPoint(rayLength);
             transform.LookAt(new Vector3(pointToLook.x, transform.position.y, pointToLook.z));
         }
+    }
+
+    private void Shoot(bool shooting)
+    {
+        if (shooting) 
+        {
+            gunController.isFiring = true;
+        } else
+        {
+            gunController.isFiring = false;
+        }
+        
     }
 
     private void MovePlayer()

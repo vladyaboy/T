@@ -123,24 +123,28 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &344740808 stripped
+--- !u!1 &682965118 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 2759245635726565127, guid: afb9c886392d4e34fa57c07eec7e38f4, type: 3}
+  m_CorrespondingSourceObject: {fileID: 6478330155221721718, guid: afb9c886392d4e34fa57c07eec7e38f4, type: 3}
   m_PrefabInstance: {fileID: 2759245635382873295}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &344740814
+--- !u!114 &682965120
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 344740808}
+  m_GameObject: {fileID: 682965118}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e03469e01f171ff4b8f4c7fb8c50a3ec, type: 3}
+  m_Script: {fileID: 11500000, guid: 478d14ff6cf03d046a4b342bb046dd8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerMoveSpeed: 7
+  isFiring: 1
+  bulletController: {fileID: 1676437910102973732, guid: 693d10b812a157b4b846ed919e0d2325, type: 3}
+  bulletSpeed: 10
+  timeBitweenShots: 0.4
+  firePoint: {fileID: 1950714729}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -416,6 +420,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!4 &1950714729 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7749205167170369409, guid: afb9c886392d4e34fa57c07eec7e38f4, type: 3}
+  m_PrefabInstance: {fileID: 2759245635382873295}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &870365922869726963
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -488,18 +497,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2759245635726565122, guid: afb9c886392d4e34fa57c07eec7e38f4, type: 3}
-      propertyPath: m_Drag
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2759245635726565122, guid: afb9c886392d4e34fa57c07eec7e38f4, type: 3}
-      propertyPath: m_Mass
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2759245635726565122, guid: afb9c886392d4e34fa57c07eec7e38f4, type: 3}
-      propertyPath: m_Constraints
-      value: 80
-      objectReference: {fileID: 0}
     - target: {fileID: 2759245635726565123, guid: afb9c886392d4e34fa57c07eec7e38f4, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -548,33 +545,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 2759245635987108982, guid: afb9c886392d4e34fa57c07eec7e38f4, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2759245635987108982, guid: afb9c886392d4e34fa57c07eec7e38f4, type: 3}
+    - target: {fileID: 7749205167170369409, guid: afb9c886392d4e34fa57c07eec7e38f4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.681
-      objectReference: {fileID: 0}
-    - target: {fileID: 2759245635987108982, guid: afb9c886392d4e34fa57c07eec7e38f4, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2759245635987108982, guid: afb9c886392d4e34fa57c07eec7e38f4, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2759245635987108982, guid: afb9c886392d4e34fa57c07eec7e38f4, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2759245635987108982, guid: afb9c886392d4e34fa57c07eec7e38f4, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2759245635987108982, guid: afb9c886392d4e34fa57c07eec7e38f4, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -90
+      value: 1.074
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: afb9c886392d4e34fa57c07eec7e38f4, type: 3}
