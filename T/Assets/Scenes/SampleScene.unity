@@ -144,6 +144,7 @@ MonoBehaviour:
   bulletController: {fileID: 1676437910102973732, guid: 693d10b812a157b4b846ed919e0d2325, type: 3}
   bulletSpeed: 10
   timeBitweenShots: 0.4
+  nextfire: 0
   firePoint: {fileID: 1950714729}
 --- !u!1 &705507993
 GameObject:
@@ -497,6 +498,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 344740814, guid: afb9c886392d4e34fa57c07eec7e38f4, type: 3}
+      propertyPath: gunController
+      value: 
+      objectReference: {fileID: 682965120}
     - target: {fileID: 2759245635726565123, guid: afb9c886392d4e34fa57c07eec7e38f4, type: 3}
       propertyPath: m_RootOrder
       value: 3
