@@ -24,7 +24,7 @@ public class Enemy1 : BaseEnemy
         gunController.isFiring = false;
     }
 
-    protected override void Dying()
+    public override void Dying()
     {
         base.Dying();
         // add some score to the player

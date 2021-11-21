@@ -146,7 +146,7 @@ public abstract class BaseEnemy : MonoBehaviour
     {
         Debug.Log("Set the attacking");
     }
-    protected virtual void Dying()
+    public virtual void Dying()
     {
         Destroy(gameObject);
     }

@@ -165,7 +165,7 @@ GameObject:
   - component: {fileID: 2214067735020987889}
   m_Layer: 0
   m_Name: Gun Cylinder
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -292,7 +292,7 @@ GameObject:
   - component: {fileID: 359363548}
   m_Layer: 0
   m_Name: Gun
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -328,7 +328,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFiring: 0
   bulletController: {fileID: 6287633350392635565, guid: 19936bd78475c2a4f9917896080b14c7, type: 3}
-  bulletSpeed: 5
+  bulletSpeed: 10
+  bulletDamage: 1
   timeBitweenShots: 1
   nextfire: 0
   firePoint: {fileID: 3141784951022129067}
