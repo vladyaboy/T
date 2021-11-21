@@ -138,12 +138,12 @@ MonoBehaviour:
   maxHealth: 12
   patrolSpeed: 3
   chaseSpeed: 7
-  sightRange: 10
+  sightRange: 13
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 5
-  timeBitweenAttacks: 2
+  timeBitweenAttacks: 1
   alreadyAttacked: 0
-  attackRange: 5
+  attackRange: 7
   isGround:
     serializedVersion: 2
     m_Bits: 128
@@ -151,6 +151,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   gunController: {fileID: 359363548}
+  scoreForEnemy: 5
 --- !u!1 &5443968431918412736
 GameObject:
   m_ObjectHideFlags: 0
