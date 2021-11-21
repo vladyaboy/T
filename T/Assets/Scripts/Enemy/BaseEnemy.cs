@@ -48,7 +48,7 @@ public abstract class BaseEnemy : MonoBehaviour
     protected bool playerIsInSightRange;
     protected bool playerIsInAttackingRange;
 
-    private void Awake()
+    protected void Awake()
     {
         InitializeComponents();
     }
@@ -59,7 +59,7 @@ public abstract class BaseEnemy : MonoBehaviour
         navMeshAgent = GetComponent<NavMeshAgent>();
     }
 
-    private void Update()
+    protected void Update()
     {
         CheckRanges();
         HadleBehavior();
@@ -131,6 +131,7 @@ public abstract class BaseEnemy : MonoBehaviour
 
     protected virtual void BaseAttack()
     {
+        navMeshAgent.SetDestination(transform.position);
         transform.LookAt(player);
 
         if (!alreadyAttacked)
@@ -141,7 +142,7 @@ public abstract class BaseEnemy : MonoBehaviour
         }
     }
 
-    private void ResetAttack()
+    protected virtual void ResetAttack()
     {
         alreadyAttacked = false;
     }

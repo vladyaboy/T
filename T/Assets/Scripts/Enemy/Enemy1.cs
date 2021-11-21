@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class Enemy1 : BaseEnemy
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField]
+    GunController gunController;
+
+    private void Awake()
     {
-        this.maxHealth = 10;
+        base.Awake();
+    }
+    protected override void Attack()
+    {
+        gunController.isFiring = true;
+        base.Attack();
     }
 
-    // Update is called once per frame
-    void Update()
+    protected override void ResetAttack()
     {
-        
+        base.ResetAttack();
+        gunController.isFiring = false;
     }
 }
