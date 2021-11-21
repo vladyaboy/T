@@ -1,15 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
     public bool gameOver = false;
 
     [SerializeField]
+    TextMeshProUGUI gameOverText;
+
+    [SerializeField]
     LayerMask isLevel;
 
-    //Можно было бы и сделать Лист из префабов противников, но пока что противник только 1
+    //Можно было бы и сделать Лист из префабов противников, но пока что тип противников только 1
     public GameObject enemyPrefab;
 
     int waveNumber = 1;
@@ -83,6 +87,6 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         gameOver = true;
-        Debug.Log("Game Over");
+        gameOverText.gameObject.SetActive(true);
     }
 }
