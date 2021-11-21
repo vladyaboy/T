@@ -1,18 +1,49 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class BaseEnemy : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public NavMeshAgent navMeshAgent;
+
+    [SerializeField]
+    protected int health;
+
+    [SerializeField]
+    protected int maxHealth;
+
+    [SerializeField]
+    protected float speed;
+
+    [SerializeField]
+    protected float sightRange;
+
+    [Header("Attack")]
+
+    [SerializeField]
+    protected float timeBitweenAttacks;
+
+    [SerializeField]
+    protected float attackRange;
+
+    protected virtual void TakeDamage()
     {
-        
+
     }
 
-    // Update is called once per frame
-    void Update()
+    protected virtual void Patroling()
     {
-        
+
+    }
+
+    protected virtual void Chase()
+    {
+
+    }
+
+    protected virtual void Attack()
+    {
+
     }
 }
