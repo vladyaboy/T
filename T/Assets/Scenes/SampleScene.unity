@@ -558,7 +558,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOver: 0
+  playerController: {fileID: 1585576295}
   gameOverText: {fileID: 79378353}
+  healthText: {fileID: 382199508}
   scoreText: {fileID: 288233850}
   waveText: {fileID: 476745095}
   restartButton: {fileID: 1595668607}
@@ -1207,6 +1209,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1456155321}
   m_CullTransparentMesh: 1
+--- !u!114 &1585576295 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 344740814, guid: afb9c886392d4e34fa57c07eec7e38f4, type: 3}
+  m_PrefabInstance: {fileID: 2759245635382873295}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e03469e01f171ff4b8f4c7fb8c50a3ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1595668605
 GameObject:
   m_ObjectHideFlags: 0
