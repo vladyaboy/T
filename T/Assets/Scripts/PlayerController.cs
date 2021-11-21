@@ -44,10 +44,12 @@ public class PlayerController : MonoBehaviour
         horizontalInput = Input.GetAxisRaw("Horizontal");
 
         moveDirection = transform.forward * verticalInput + transform.right * horizontalInput;
+
     }
 
     private void MovePlayer()
     {
-        playerRb.AddForce(moveDirection.normalized * playerMoveSpeed * movementMultiplier, ForceMode.Force);
+        playerRb.AddForce(playerRb.transform.InverseTransformDirection(moveDirection.normalized) * playerMoveSpeed * movementMultiplier, ForceMode.Force);
+        
     }
 }
