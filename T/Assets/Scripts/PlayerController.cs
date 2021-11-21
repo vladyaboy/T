@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     GameManager gameManager;
 
     [SerializeField]
-    int health;
+    public int health;
 
     [SerializeField]
     int maxHealth;

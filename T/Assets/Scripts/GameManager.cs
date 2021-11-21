@@ -10,7 +10,13 @@ public class GameManager : MonoBehaviour
     int playerScore = 0;
 
     [SerializeField]
+    PlayerController playerController;
+
+    [SerializeField]
     TextMeshProUGUI gameOverText;
+
+    [SerializeField]
+    TextMeshProUGUI healthText;
 
     [SerializeField]
     TextMeshProUGUI scoreText;
@@ -23,6 +29,7 @@ public class GameManager : MonoBehaviour
 
     string scoreTextTemplate = "The score:";
     string waveTextTemplate = "Wave:";
+    string healthTextTemplate = "Health:";
 
     [SerializeField]
     LayerMask isLevel;
@@ -69,6 +76,12 @@ public class GameManager : MonoBehaviour
     {
         scoreText.text = ($"{scoreTextTemplate} {playerScore}");
         waveText.text = ($"{waveTextTemplate} {waveNumber}");
+        healthText.text = ($"{healthTextTemplate} {playerController.health}");
+
+        if(playerController.health < 4)
+        {
+            healthText.color = Color.red;
+        }
     }
 
     private void HandleGameOver()
